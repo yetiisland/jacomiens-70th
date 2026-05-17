@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacomien's 70th Birthday · Necker Island · April 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #042c53;
+    --navy-mid: #185fa5;
+    --navy-light: #e6f1fb;
+    --teal: #0f6e56;
+    --teal-mid: #5dcaa5;
+    --teal-light: #e1f5ee;
+    --amber: #854f0b;
+    --amber-light: #faeeda;
+    --warm-white: #faf8f4;
+    --sand: #f1efe8;
+    --stone: #888780;
+    --charcoal: #2c2c2a;
+    --mid-gray: #5f5e5a;
+    --light-border: #d3d1c7;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    background: rgba(250,248,244,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--light-border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--mid-gray);
+    letter-spacing: 0.06em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover { color: var(--charcoal); border-bottom-color: var(--charcoal); }
+  .nav-rsvp {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: var(--teal-light);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-rsvp:hover { background: var(--navy-mid); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--navy);
+  }
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background: url('https://github.com/yetiisland/jacomiens-70th/blob/main/island.webp?raw=true') center/cover no-repeat;
+    opacity: 0.22;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(4,44,83,0.15) 0%, rgba(4,44,83,0.72) 100%);
+  }
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 80px 40px;
+    max-width: 800px;
+    animation: fadeUp 1.2s ease both;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 28px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-portrait {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(93,202,165,0.4);
+    margin: 0 auto 36px;
+    display: block;
+    background: #1d4e7a;
+    animation: fadeUp 1s 0.3s ease both;
+    filter: grayscale(15%);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 9vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: #fff;
+    margin-bottom: 16px;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--teal-mid);
+  }
+  .hero-seventy {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 48px;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .hero-meta-item {
+    padding: 14px 28px;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    text-align: center;
+  }
+  .hero-meta-item:first-child { border-right: none; }
+  .hero-meta-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 5px;
+  }
+  .hero-meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.04em;
+  }
+  .hero-cta {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--teal-light);
+    border: 1px solid var(--teal-mid);
+    padding: 15px 40px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    animation: fadeUp 1s 0.7s ease both;
+  }
+  .hero-cta:hover { background: var(--teal-mid); color: var(--navy); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.3);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeUp 1s 1s ease both;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    animation: scrollPulse 2s 1.5s ease-in-out infinite;
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    padding: 100px 48px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 32px;
+  }
+  .intro h2 em { font-style: italic; }
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .ornament-line { width: 48px; height: 0.5px; background: var(--teal-mid); }
+  .ornament-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal-mid); }
+  .intro p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--mid-gray);
+    font-weight: 300;
+  }
+
+  /* ── DETAILS BAR ── */
+  .details-bar {
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .detail-item {
+    padding: 40px 44px;
+    border-right: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .detail-item:last-child { border-right: none; }
+  .detail-icon { font-size: 18px; color: var(--teal-mid); margin-bottom: 14px; }
+  .detail-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 10px;
+  }
+  .detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  .detail-sub { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+
+  /* ── ACTIVITIES ── */
+  .activities {
+    padding: 100px 48px;
+    background: var(--sand);
+  }
+  .activities-header { text-align: center; margin-bottom: 56px; }
+  .activities-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--navy);
+  }
+  .activities-header p {
+    font-size: 14px;
+    color: var(--stone);
+    margin-top: 14px;
+    letter-spacing: 0.04em;
+  }
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .activity-card {
+    background: var(--warm-white);
+    padding: 36px 28px;
+    transition: background 0.2s;
+  }
+  .activity-card:hover { background: #fff; }
+  .activity-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--teal-light);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .activity-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .activity-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--mid-gray);
+  }
+  .activity-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    border-bottom: 1px solid var(--teal-mid);
+    padding-bottom: 2px;
+  }
+
+  /* ── MEMORIES ── */
+  .memories {
+    padding: 100px 48px;
+    background: var(--amber-light);
+    text-align: center;
+  }
+  .memories h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--amber);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .memories p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #633806;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+  }
+  .memories-form {
+    background: #fff;
+    border: 0.5px solid #e8d5b0;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+  }
+  .memories-form h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--amber);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 8px;
+  }
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 0.5px solid var(--light-border);
+    background: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--amber); background: #fff; }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .file-upload {
+    border: 1px dashed #c8a96e;
+    padding: 28px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--amber-light);
+    transition: background 0.2s;
+  }
+  .file-upload:hover { background: #f5e4c4; }
+  .file-upload-icon { font-size: 22px; color: var(--amber); margin-bottom: 8px; }
+  .file-upload-text { font-size: 13px; color: #854f0b; }
+  .file-upload-sub { font-size: 11px; color: #b37a3a; margin-top: 4px; }
+  .memories-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--amber);
+    color: var(--amber-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .memories-submit:hover { background: #633806; }
+
+  /* ── RSVP ── */
+  .rsvp-section {
+    padding: 100px 48px;
+    background: var(--warm-white);
+  }
+  .rsvp-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .rsvp-header { text-align: center; margin-bottom: 48px; }
+  .rsvp-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .rsvp-header p { font-size: 13px; color: var(--stone); letter-spacing: 0.06em; }
+  .rsvp-deadline {
+    display: inline-block;
+    background: var(--navy-light);
+    color: var(--navy-mid);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 7px 18px;
+    margin-top: 12px;
+  }
+  .radio-row { display: flex; gap: 10px; }
+  .radio-btn {
+    flex: 1;
+    padding: 13px;
+    border: 0.5px solid var(--light-border);
+    background: #fff;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: var(--mid-gray);
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .radio-btn.active { background: var(--navy); color: var(--teal-light); border-color: var(--navy); }
+  .rsvp-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--navy);
+    color: var(--teal-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .rsvp-submit:hover { background: var(--navy-mid); }
+
+  /* ── GETTING THERE ── */
+  .getting-there {
+    background: var(--navy);
+    padding: 80px 48px;
+  }
+  .getting-there-inner { max-width: 960px; margin: 0 auto; }
+  .getting-there h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .step {
+    background: rgba(255,255,255,0.05);
+    padding: 32px 28px;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--teal-mid);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .step-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+  }
+  .step-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 40px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-right { text-align: right; }
+  .footer-contact { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+  .footer-contact a { color: var(--teal-mid); text-decoration: none; }
+  .footer-contact a:hover { text-decoration: underline; }
+  .footer-note { font-size: 11px; color: rgba(255,255,255,0.18); margin-top: 6px; letter-spacing: 0.04em; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    /* Nav */
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+
+    /* Hero */
+    .hero-content { padding: 60px 24px; }
+    .hero-meta { flex-direction: column; gap: 0; width: 100%; }
+    .hero-meta-item { width: 100%; border: 0.5px solid rgba(255,255,255,0.15); border-bottom: none; }
+    .hero-meta-item:last-child { border-bottom: 0.5px solid rgba(255,255,255,0.15); }
+    .hero-meta-item:first-child { border-right: 0.5px solid rgba(255,255,255,0.15); }
+    .hero-portrait { width: 160px; height: 160px; }
+    .hero-cta { width: 100%; text-align: center; box-sizing: border-box; }
+
+    /* Details bar */
+    .details-bar { grid-template-columns: 1fr; }
+    .detail-item { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); padding: 28px 24px; }
+
+    /* Intro */
+    .intro { padding: 60px 24px; }
+
+    /* Activities */
+    .activities { padding: 64px 24px; }
+    .activities-grid,
+    .activities-grid[style] { display: grid !important; grid-template-columns: 1fr !important; }
+
+    /* Need to know section (inline grid) */
+    #need-to-know { padding: 60px 24px !important; }
+    #need-to-know > div > div[style*="grid"] { display: flex !important; flex-direction: column !important; }
+    #need-to-know > div > div[style*="grid"] > div { border-left: none !important; }
+    #need-to-know > div > div[style*="flex"] { flex-direction: column !important; }
+
+    /* Memories */
+    .memories { padding: 64px 24px; }
+    .memories-form { padding: 28px 20px; }
+
+    /* Gift note box */
+    div[style*="max-width:560px"] { margin: 24px 24px 0 !important; padding: 24px 20px !important; }
+
+    /* RSVP */
+    .rsvp-section { padding: 64px 24px; }
+
+    /* Getting there */
+    .getting-there { padding: 64px 24px; }
+    .steps-grid { grid-template-columns: 1fr; }
+
+    /* Footer */
+    footer { flex-direction: column; text-align: center; padding: 40px 24px; gap: 24px; }
+    .footer-right { text-align: center; }
+    .footer-right a { font-size: 17px !important; word-break: break-all; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jacomien · 70</div>
+  <ul class="nav-links">
+    <li><a href="#celebration">The Celebration</a></li>
+    <li><a href="#activities">The Island</a></li>
+    <li><a href="#memories">Share a Memory</a></li>
+    <li><a href="#getting-there">Getting There</a></li>
+  </ul>
+  <a href="#rsvp" class="nav-rsvp">RSVP</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Necker Island · British Virgin Islands · 2027</div>
+    <img class="hero-portrait" src="https://github.com/yetiisland/jacomiens-70th/blob/main/Jacomien.jpeg?raw=true" alt="Jacomien">
+    <h1 class="hero-name">Celebrating<br><em>Jacomien</em></h1>
+    <div class="hero-seventy">Seventy Beautiful Years</div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Dates</div>
+        <div class="hero-meta-value">April 25 – May 2, 2027</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Location</div>
+        <div class="hero-meta-value">Necker Island, BVI</div>
+      </div>
+    </div>
+    <a href="#rsvp" class="hero-cta">RSVP</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="celebration">
+  <span class="section-label">You're invited</span>
+  <h2>Seven days. The people she loves.<br><em>One extraordinary woman.</em></h2>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-dot"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <p>Jacomien would like nothing more than to gather the people she loves and watch them have the time of their lives — that's always been her greatest joy. There'll be laughter, good food, and long golden evenings. No speeches, no fuss, no spotlight. Just the people she loves, exactly as they are. Come ready for&#160;all&#160;of&#160;it.</p>
+</section>
+
+<!-- DETAILS BAR -->
+<div class="details-bar">
+  <div class="detail-item">
+    <div class="detail-icon">&#9651;</div>
+    <div class="detail-label">Where</div>
+    <div class="detail-value">Necker Island</div>
+    <div class="detail-sub">British Virgin Islands</div>
+  </div>
+  <div class="detail-item">
+    <div class="detail-icon">&#9651;</div>
+    <div class="detail-label">When</div>
+    <div class="detail-value">April 25 – May 2</div>
+    <div class="detail-sub">Seven nights · 2027</div>
+  </div>
+  <div class="detail-item">
+    <div class="detail-icon">&#9651;</div>
+    <div class="detail-label">Who</div>
+    <div class="detail-value">Close Circle</div>
+    <div class="detail-sub">Family &amp; dear friends</div>
+  </div>
+</div>
+
+<!-- ACTIVITIES -->
+<section class="activities" id="activities">
+  <div class="activities-header">
+    <span class="section-label">The island awaits</span>
+    <h2>A flavour of what to expect</h2>
+    <p>Each day will be shaped closer to the time — tailored to Jacomien and the people around her.<br>No two days will be the same. Here's a sense of what awaits.</p>
+  </div>
+  <div class="activities-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="activity-card">
+      <div class="activity-number" style="font-size:32px;color:#c8e8dc;">Morning</div>
+      <p class="activity-desc" style="font-size:14px;line-height:1.85;">You may find yourself up with the sun, the island still quiet, a gentle yoga session on the rooftop giving way to breakfast on the beach as the first light catches the water — unhurried, peaceful, and entirely yours. Or an hour later, wind in your hair, racing a Hobie Cat around the island with a group who are all definitely not trying to win.</p>
+    </div>
+    <div class="activity-card">
+      <div class="activity-number" style="font-size:32px;color:#c8e8dc;">Afternoon</div>
+      <p class="activity-desc" style="font-size:14px;line-height:1.85;">Lunch might be a long, unhurried spread on Turtle Beach with cold drinks and warm sand underfoot. Or an afternoon out on the water — snorkelling a coral reef, kayaking a hidden cove, or learning to kitesurf with a patient instructor. Some afternoons will pull you toward the spa, a hammock, or a guided walk to meet the island's lemurs, flamingos, and giant tortoises. Others will be gone before you've thought to check the time.</p>
+    </div>
+    <div class="activity-card">
+      <div class="activity-number" style="font-size:32px;color:#c8e8dc;">Evening</div>
+      <p class="activity-desc" style="font-size:14px;line-height:1.85;">Dinner may be a relaxed, family-style affair with soft live music, rum cocktails, and a sunset that does all the work. Or it may have you dressed to the nines for a James Bond evening — martini glasses lining the bar, roulette wheels spinning, the Great House lit up and transformed. Some nights will quietly simmer into the small hours, and others will absolutely surprise and delight you — the kind of evenings you'll still be talking about on the flight home.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEED TO KNOW -->
+<section style="padding:80px 48px;background:var(--warm-white);" id="need-to-know">
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:52px;">
+      <span class="section-label">Everything you need</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,44px);font-weight:300;color:var(--navy);">Before you pack your bags</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
+
+      <div style="background:var(--sand);padding:36px 28px;">
+        <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;">Getting There</div>
+        <p style="font-size:13px;line-height:1.8;color:var(--mid-gray);">
+          Fly into <strong style="color:var(--charcoal);">Terrance B. Lettsome International (EIS)</strong> on Tortola, BVI. Most guests connect through <strong style="color:var(--charcoal);">San Juan (SJU)</strong> or <strong style="color:var(--charcoal);">St. Maarten (SXM)</strong>. A private ferry transfer from Beef Island jetty to Necker will be coordinated around your arrival — details sent on confirmation.
+        </p>
+      </div>
+
+      <div style="background:var(--sand);padding:36px 28px;border-left:2px solid var(--warm-white);">
+        <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;">Dates &amp; Arrival</div>
+        <p style="font-size:13px;line-height:1.8;color:var(--mid-gray);">
+          Arrive <strong style="color:var(--charcoal);">Sunday April 25, 2027.</strong> Welcome drinks on the Great House terrace from 5pm. Depart <strong style="color:var(--charcoal);">Friday May 2, 2027</strong> — farewell breakfast before transfers. The week is fully covered — and if you'd like to indulge in any extras like spa treatments, we'll send all the details closer to the time.
+        </p>
+      </div>
+
+      <div style="background:var(--sand);padding:36px 28px;border-left:2px solid var(--warm-white);">
+        <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;">What to Bring</div>
+        <p style="font-size:13px;line-height:1.8;color:var(--mid-gray);">
+          Light, casual resort wear for days. At least one smart outfit for evenings — <strong style="color:var(--charcoal);">watch your email for themed night details.</strong> A hat is essential, and please bring reef-safe sun products — the island and its waters will thank you. Leave the formal wear at home.
+        </p>
+      </div>
+
+    </div>
+    <div style="background:var(--navy);padding:20px 28px;margin-top:2px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-mid);">Important</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;flex:1;">More details — including a full packing list and transfer logistics — will be sent to your RSVP email as we get closer. Make sure <strong style="color:var(--teal-mid);">jacomiens70th@gmail.com</strong> is in your contacts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section class="memories" id="memories">
+  <span class="section-label">Before you arrive</span>
+  <h2>"Share a memory of Jacomien<br>that makes you smile."</h2>
+  <p>We're collecting your stories and photos to weave into a slideshow for the birthday dinner. Tell us your favourite "That's so J" moment — a story, a scene, a line that's so perfectly her. Together they'll create the perfect gift for Jacomien.</p>
+  <div class="memories-form">
+    <h3>Your gift to Jacomien</h3>
+    <div class="form-group">
+      <label class="form-label">Your Name</label>
+      <input id="memory-name" class="form-input" type="text" placeholder="So we know who it's from">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Your "That's so J" memory</label>
+      <div style="background:var(--amber-light);border-left:3px solid #c8a96e;padding:14px 16px;margin-bottom:10px;font-size:13px;color:#633806;line-height:1.75;">
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#b37a3a;margin-bottom:6px;">An example to get you started</div>
+        <em>"It's 8pm. Dinner has been cleared, the sun is melting into the horizon, someone's opened a Malbec that's perfectly ok, and the conversation is just getting good. Then you hear footsteps on the stairs — and there she is, heading to bed. She's decided. That's so J."</em>
+      </div>
+      <textarea id="memory-story" class="form-textarea" placeholder="Tell us a story, a moment, a line that's so perfectly her..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Add Photos (optional)</label>
+      <div class="file-upload">
+        <div class="file-upload-icon">↑</div>
+        <div class="file-upload-text">Drop photos here or click to browse</div>
+        <div class="file-upload-sub">JPG, PNG — as many as you like</div>
+      </div>
+    </div>
+    <button class="memories-submit" onclick="sendMemory()">Send My Memory →</button>
+  </div>
+  <div style="max-width:560px;margin:32px auto 0;padding:32px 36px;background:#fff;border:1px solid #e8d5b0;text-align:center;">
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#b37a3a;margin-bottom:16px;">A note on gifts</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:var(--amber);line-height:1.6;">Jacomien has everything she needs. What fills her heart is seeing the people she loves happy and having the time of their lives. Your presence — and your stories — are the only gift she's asked for.</p>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp-section" id="rsvp">
+  <div class="rsvp-inner">
+    <div class="rsvp-header">
+      <span class="section-label">We'd love to know</span>
+      <h2>Will you join us?</h2>
+      <p>Please let us know by</p>
+      <span class="rsvp-deadline">September 1st, 2026</span>
+    </div>
+
+
+
+    <div class="form-group">
+      <label class="form-label">Contact Email Address</label>
+      <input id="rsvp-email" class="form-input" type="email" placeholder="your@email.com">
+      <div style="font-size:11px;color:var(--stone);margin-top:6px;">All updates will come to this address — make sure it's one you check regularly.</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">How many guests are you RSVPing for?</label>
+      <select id="guest-count" class="form-input" style="cursor:pointer;appearance:auto;" onchange="updateGuestFields()">
+        <option value="1">Just me</option>
+        <option value="2">2 guests</option>
+        <option value="3">3 guests</option>
+        <option value="4">4 guests</option>
+      </select>
+    </div>
+
+    <div id="guest-fields"></div>
+    <div class="form-group">
+      <label class="form-label">Your perfect beach day <span style="color:var(--stone);font-size:10px;letter-spacing:0.1em;">(250 words or so)</span></label>
+      <div style="font-size:12px;color:var(--stone);margin-bottom:8px;line-height:1.6;">Paint us a picture — are you up at sunrise with a paddleboard, or horizontal on a sunlounger with a book and something cold? This helps us shape the week around the people in it.</div>
+      <textarea id="rsvp-beachday" class="form-textarea" style="min-height:120px;" placeholder="My perfect beach day looks like..." maxlength="1500"></textarea>
+      <div style="font-size:11px;color:var(--stone);margin-top:4px;text-align:right;" id="beach-counter">0 / ~250 words</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">A note for the family (optional)</label>
+      <textarea id="rsvp-note" class="form-textarea" style="min-height:90px;" placeholder="Anything else we should know, or a warm word..."></textarea>
+    </div>
+    <button class="rsvp-submit" onclick="
+      var name = document.getElementById('rsvp-name').value || '(not provided)';
+      var email = document.getElementById('rsvp-email').value || '(not provided)';
+      var attending = document.querySelector('.radio-btn.active') ? document.querySelector('.radio-btn.active').innerText : '(not selected)';
+      var size = document.getElementById('rsvp-size').value || '(not selected)';
+      var dietary = document.getElementById('rsvp-dietary').value || 'None';
+      var beachday = document.getElementById('rsvp-beachday').value || 'Not provided';
+      var note = document.getElementById('rsvp-note').value || 'None';
+      var subject = encodeURIComponent('RSVP — Jacomien\'s 70th · ' + name);
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Attending: ' + attending + '\n' +
+        'T-Shirt Size: ' + size + '\n' +
+        'Dietary Requirements: ' + dietary + '\n' +
+        'Perfect Beach Day: ' + beachday + '\n' +
+        'Note: ' + note + '\n\n' +
+        '---\n' +
+        'Sent via the Jacomien\'s 70th website.'
+      );
+      window.location.href = 'mailto:jacomiens70th@gmail.com?subject=' + subject + '&body=' + body;
+    ">Send my RSVP →</button>
+    <p style="font-size:12px;color:var(--stone);text-align:center;margin-top:14px;line-height:1.6;">Clicking the button above will open your email app with everything pre-filled and ready to send to <strong>jacomiens70th@gmail.com</strong> — just hit send. This also adds them to your sent mail so it's easy to find later.</p>
+  </div>
+</section>
+
+<!-- GETTING THERE -->
+<section class="getting-there" id="getting-there">
+  <div class="getting-there-inner">
+    <span class="section-label" style="color:var(--teal-mid);display:block;text-align:center;margin-bottom:16px;">Logistics</span>
+    <h2>Getting to Necker</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Fly into Beef Island</div>
+        <p class="step-desc">The closest airport is Terrance B. Lettsome International (EIS) on Tortola. Most guests connect through San Juan (SJU) or St. Maarten (SXM). Full flight guidance coming soon.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Transfer to the island</div>
+        <p class="step-desc">A private ferry runs from Tortola's Beef Island jetty to Necker. Transfers will be coordinated around guest arrival times — details in your confirmation email.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Arrive &amp; settle in</div>
+        <p class="step-desc">Welcome drinks on the Great House terrace from 5pm on April 25. The week is fully covered — and if you'd like to indulge in any extras like spa treatments, we'll send all the details closer to the time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Jacomien · 70 · 2027</div>
+  <div class="footer-right">
+    <div class="footer-contact-prominent">
+      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:8px;">Got a question?</div>
+      <a href="mailto:jacomiens70th@gmail.com" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;text-decoration:none;border-bottom:1px solid var(--teal-mid);padding-bottom:2px;letter-spacing:0.04em;">jacomiens70th@gmail.com</a>
+      <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px;">We'd love to hear from you</div>
+    </div>
+    <div class="footer-note" style="margin-top:16px;">A site made with love by the family</div>
+  </div>
+</footer>
+
+<script>
+function updateGuestFields() {
+  var count = parseInt(document.getElementById('guest-count').value);
+  var container = document.getElementById('guest-fields');
+  container.innerHTML = '';
+  var sizes = ['XS','S','M','L','XL','XXL','XXXL'];
+  for (var i = 1; i <= count; i++) {
+    var label = count === 1 ? 'Your details' : 'Guest ' + i;
+    container.innerHTML += \`
+      <div style="border:0.5px solid var(--light-border);padding:20px 20px 8px;margin-bottom:16px;background:#fff;">
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;">\${label}</div>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input class="form-input guest-name" type="text" placeholder="Full name" data-guest="\${i}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Attending?</label>
+          <div class="radio-row">
+            <div class="radio-btn active attend-yes" data-guest="\${i}" onclick="setAttend(this,\${i},'yes')">Joyfully yes</div>
+            <div class="radio-btn attend-no" data-guest="\${i}" onclick="setAttend(this,\${i},'no')">Sadly no</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">T-Shirt Size</label>
+          <select class="form-input guest-size" data-guest="\${i}" style="cursor:pointer;appearance:auto;">
+            <option value="" disabled selected>Select size</option>
+            \${sizes.map(s=>\`<option>\${s}</option>\`).join('')}
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Dietary Requirements (optional)</label>
+          <input class="form-input guest-dietary" type="text" data-guest="\${i}" placeholder="Any allergies or preferences?">
+        </div>
+      </div>\`;
+  }
+}
+
+function setAttend(el, guest, val) {
+  document.querySelectorAll(\`.attend-yes[data-guest="\${guest}"], .attend-no[data-guest="\${guest}"]\`).forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function sendRSVP() {
+  var email = document.getElementById('rsvp-email').value || '(not provided)';
+  var beachday = document.getElementById('rsvp-beachday').value || 'Not provided';
+  var note = document.getElementById('rsvp-note').value || 'None';
+  var count = parseInt(document.getElementById('guest-count').value);
+  var guestLines = '';
+  for (var i = 1; i <= count; i++) {
+    var name = document.querySelector(\`.guest-name[data-guest="\${i}"]\`);
+    var size = document.querySelector(\`.guest-size[data-guest="\${i}"]\`);
+    var dietary = document.querySelector(\`.guest-dietary[data-guest="\${i}"]\`);
+    var attending = document.querySelector(\`.attend-yes[data-guest="\${i}"]\`);
+    guestLines += 'Guest ' + i + ':\n';
+    guestLines += '  Name: ' + (name ? name.value || 'Not provided' : '') + '\n';
+    guestLines += '  Attending: ' + (attending && attending.classList.contains('active') ? 'Yes' : 'No') + '\n';
+    guestLines += '  T-Shirt Size: ' + (size ? size.value || 'Not selected' : '') + '\n';
+    guestLines += '  Dietary: ' + (dietary ? dietary.value || 'None' : '') + '\n\n';
+  }
+  var subject = encodeURIComponent("RSVP — Jacomien's 70th · " + email);
+  var body = encodeURIComponent(
+    'Contact Email: ' + email + '\n\n' +
+    'GUESTS:\n' + guestLines +
+    'Perfect Beach Day: ' + beachday + '\n' +
+    'Note: ' + note + '\n\n---\nSent via the Jacomien\'s 70th website.'
+  );
+  window.location.href = 'mailto:jacomiens70th@gmail.com?subject=' + subject + '&body=' + body;
+}
+
+function sendMemory() {
+  var name = document.getElementById('memory-name').value || '(not provided)';
+  var story = document.getElementById('memory-story').value || '(not provided)';
+  var subject = encodeURIComponent("Memory for Jacomien's 70th · " + name);
+  var body = encodeURIComponent(
+    'From: ' + name + '\n\n' +
+    'Memory:\n' + story + '\n\n---\nSent via the Jacomien\'s 70th website.'
+  );
+  window.location.href = 'mailto:jacomiens70th@gmail.com?subject=' + subject + '&body=' + body;
+}
+
+// Initialise with 1 guest on load
+window.addEventListener('DOMContentLoaded', updateGuestFields);
+
+document.getElementById('rsvp-beachday').addEventListener('input', function() {
+  var words = this.value.trim() === '' ? 0 : this.value.trim().split(/\s+/).length;
+  var el = document.getElementById('beach-counter');
+  el.textContent = words + ' / ~250 words';
+  el.style.color = words > 280 ? '#c0392b' : 'var(--stone)';
+});
+</script>
+</body>
+</html>
